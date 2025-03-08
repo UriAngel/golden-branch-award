@@ -44,12 +44,88 @@
             margin: 30px 0;
         }
         
-        .award-image img {
-            max-width: 100%;
-            height: auto;
+        .award-image {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .olive-leaves-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            pointer-events: none;
+        }
+        
+        .olive-left,
+        .olive-right {
+            font-size: 6rem;
+            color: #556B2F;
+            position: absolute;
+            z-index: 3;
+            display: inline-block;
+            text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .oval-container {
+            position: relative;
+            width: 300px;
+            height: 450px;
+            margin: 0 auto;
+            overflow: visible;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .olive-left {
+            left: calc(50% - 155px);
+            top: 310px;
+            transform: rotate(-45deg) scale(1, 2.2);
+        }
+        
+        .olive-right {
+            right: calc(50% - 155px);
+            top: 310px;
+            transform: rotate(45deg) scale(1, 2.2);
+        }
+        
+        .oval-container {
+            position: relative;
+            width: 300px;
+            height: 450px;
+            margin: 0 auto;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .oval-mask {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 150px / 225px;
             border: 8px solid #8B4513;
-            border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .oval-mask img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .olive-leaves {
+            position: absolute;
+            width: 340px;
+            height: 490px;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            z-index: 2;
         }
         
         .award-description {
@@ -82,12 +158,20 @@
             margin: 0 auto 20px auto;
             text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
+        
+        .recipient-name {
+            font-size: 1.8rem;
+            color: #556B2F;
+            margin: 10px 0 20px 0;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="medal-icon">🏅</div>
         <h1 class="award-title">Golden Branch Award for Inverted Excellence</h1>
+        <h2 class="recipient-name">Uri Angel</h2>
         <p class="issuer">Issued by International Tree Hanging Association</p>
         <p class="date">July 2024</p>
         <div class="tree-icon">🌳</div>
@@ -95,7 +179,15 @@
     
     <main>
         <div class="award-image">
-            <img src="award_photo.jpeg" alt="Golden Branch Award Certificate or Recipient Photo">
+            <div class="olive-leaves-container">
+                <span class="olive-left">🌿</span>
+                <span class="olive-right">🌿</span>
+            </div>
+            <div class="oval-container">
+                <div class="oval-mask">
+                    <img src="award_photo.jpeg" alt="Uri Angel - Golden Branch Award Recipient">
+                </div>
+            </div>
         </div>
         
         <div class="award-description">
